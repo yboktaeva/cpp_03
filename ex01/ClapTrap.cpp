@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:23:04 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/08 19:11:25 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:32:58 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,6 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &rhs) {
     this->_attackDamage = rhs._attackDamage;
 
     return *this;
-}
-
-std::string ClapTrap::getName(void) const{
-
-    return this->_name;    
 }
 
 void ClapTrap::attack(const std::string& target) {

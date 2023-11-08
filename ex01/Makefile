@@ -6,13 +6,13 @@
 #    By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 19:17:37 by yuboktae          #+#    #+#              #
-#    Updated: 2023/11/06 19:18:59 by yuboktae         ###   ########.fr        #
+#    Updated: 2023/11/08 15:27:53 by yuboktae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ScavTrap
 
-SRC	= main.cpp ScavTrap.cpp
+SRC	= main.cpp ClapTrap.cpp ScavTrap.cpp
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
