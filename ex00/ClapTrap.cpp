@@ -6,15 +6,16 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:23:04 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/08 19:11:25 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:22:27 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() {
+ClapTrap::ClapTrap(): _hitPoints(10), _energyPoints(10), _attackDamage(0) {
     
-    std::cout << "Default constructor called" << std::endl;
+    _name = "no_name";
+    std::cout << "Default constructor called for " << "ClapTrap " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string& name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
@@ -39,7 +40,6 @@ ClapTrap::ClapTrap(ClapTrap const &src) {
 
 ClapTrap& ClapTrap::operator=(ClapTrap const &rhs) {
 
-    std::cout << "ClapTrap: assignment operator called" << std::endl;
     if (this == &rhs)
         return *this;
     
@@ -47,11 +47,12 @@ ClapTrap& ClapTrap::operator=(ClapTrap const &rhs) {
     this->_hitPoints = rhs._hitPoints;
     this->_energyPoints = rhs._energyPoints;
     this->_attackDamage = rhs._attackDamage;
+    std::cout << "ClapTrap: assignment operator called" << std::endl;
 
     return *this;
 }
 
-std::string ClapTrap::getName(void) const{
+std::string ClapTrap::getName() const{
 
     return this->_name;    
 }
@@ -64,7 +65,7 @@ void ClapTrap::attack(const std::string& target) {
         return ;
     }
     if (_energyPoints < 1)
-        std::cout << "ClapTrap " << _name << " has no Energy Points to attack " << target << std::endl;
+        std::cout << "ClapTrap " << _name << " has no Energy to attack " << target << std::endl;
     else {
         
         _energyPoints--;

@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/06 19:17:44 by yuboktae          #+#    #+#              #
-#    Updated: 2023/11/09 10:41:04 by yuboktae         ###   ########.fr        #
+#    Created: 2023/11/09 11:02:28 by yuboktae          #+#    #+#              #
+#    Updated: 2023/11/09 11:08:26 by yuboktae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
+NAME = DiamondTrap
 
-SRC	= main.cpp FragTrap.cpp ClapTrap.cpp ScavTrap.cpp
+SRC	= main.cpp FragTrap.cpp ClapTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3

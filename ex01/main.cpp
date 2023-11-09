@@ -6,7 +6,7 @@
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 19:24:32 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/08 19:04:07 by yuboktae         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:51:23 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 int main() {
 
-    ScavTrap trap1("Player1");
+    ScavTrap trap1("Player#1");
     ScavTrap trap2(trap1);
     trap1 = trap2;
-    ScavTrap trap3("Player3");
-
-    trap1.attack("Player3");
+    ScavTrap trap3("Player#3");
+    ScavTrap();
+    
+    trap1.attack(trap3.getName());
     trap3.takeDamage(1);
     trap1.beRepaired(1);
-    for (int i = 0; i < 11; i++)
-        trap2.attack("Player1");
+    for (int i = 0; i < 5; i++)
+        trap2.attack(trap1.getName());
 
     trap2.beRepaired(10);
     trap3.takeDamage(10);
-    trap3.attack("Player1");
+    trap3.attack(trap1.getName());
     trap1.guardGate();
-    
+
     return 0;
 }

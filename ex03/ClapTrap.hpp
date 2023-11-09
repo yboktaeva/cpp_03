@@ -1,34 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuboktae <yuboktae@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 19:21:39 by yuboktae          #+#    #+#             */
-/*   Updated: 2023/11/09 11:52:22 by yuboktae         ###   ########.fr       */
+/*   Created: 2023/11/06 19:19:45 by yuboktae          #+#    #+#             */
+/*   Updated: 2023/11/09 16:21:31 by yuboktae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 # include <string>
-# include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ClapTrap {
+
+protected:
+    std::string _name;
+    int _hitPoints;
+    int _energyPoints;
+    int _attackDamage;
 
 public:
-    ScavTrap();
-    ScavTrap(const std::string& name);
-    ~ScavTrap();
+    ClapTrap();
+    ClapTrap(const std::string& name);
+    virtual ~ClapTrap();
     
-    ScavTrap(ScavTrap const& src);
-    ScavTrap& operator=(ScavTrap const& rhs);
+    ClapTrap(ClapTrap const& src);
+    ClapTrap& operator=(ClapTrap const& rhs);
+    std::string getName() const;
+    int getHitPoints();
+    int getEnergyPoints();
+    int getAttackDamage();
 
     void attack(const std::string& target);
-    void guardGate();
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 };
 
 #endif
